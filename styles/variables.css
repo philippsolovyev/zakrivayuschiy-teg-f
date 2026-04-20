@@ -1,1 +1,86 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  /* Цветовая палитра */
+  --color-bg: #fff;
+  --color-text: #000;
+  --color-accent: #000;
+  --color-btn-hover: #fff;
+
+  /* Цвета для сердца */
+  --color-heart: #f00;
+  --color-heart-contour: #000;
+
+  /* Типографика */
+  --font-main: "Inter-Variable", sans-serif;
+  --font-accent: "PressStart2P", fantasy;
+  --font-size-main: 18px;
+
+  /* Веса шрифтов из макета */
+  --font-weight-text: 410;
+  --font-weight-title: 700;
+
+  /* Размеры шрифтов — через clamp */
+  --logo-font-size: clamp(
+    3.0625rem,
+    2.2188rem + 3.6vw,
+    4.0625rem
+  ); /* 49px → 65px */
+  --header-title-size: clamp(
+    0.875rem,
+    0.5938rem + 1.2vw,
+    1.4375rem
+  ); /* 14px → 23px */
+
+  /* Межстрочные интервалы */
+  --line-height-logo: 1;
+  --line-height-title: 1;
+  --line-height-card-title: 1;
+  --line-height-card-text: 21px;
+  --line-height-button: 0.9;
+  --line-height-dialog: 1.5;
+
+  /* Геометрия */
+  --border-main: 2px solid var(--color-accent);
+  --gap-cards: 51px;
+
+  /* Ширина контента — через clamp */
+  --max-width-content: clamp(
+    23.4375rem,
+    16.25rem + 30.5vw,
+    43.75rem
+  ); /* 375px → 700px */
+
+  /* Отступы в хедере — через clamp */
+  --header-padding-block: clamp(
+    7.625rem,
+    7.625rem + 0.75vw,
+    8.125rem
+  ); /* 122px → 130px */
+  --header-padding-inline: clamp(
+    1rem,
+    1rem + 10vw,
+    7.656rem
+  ); /* 16px → 122.5px */
+
+  /* Отступы в карточке */
+  --card-title-padding: 5px 10px;
+  --card-text-padding: 25px;
+  --card-text-gap: 27px;
+
+  /* Отступы для водяного знака */
+  --watermark-offset-inline: 25px;
+  --watermark-offset-block: 25px;
+
+  /* Фон страницы */
+  --bg-page:
+    repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
+}
+
+@media (width <= 375px) {
+  :root {
+    --card-title-padding: 8px 10px;
+    --gap-cards: 44px;
+    --card-text-padding: 25px;
+  }
+}
