@@ -19,7 +19,7 @@
   flex-direction: column;
   white-space: nowrap;
   align-items: center;
-  margin: 0 auto 96px;
+  margin: 0 auto 100px;
   padding-block: var(--header-padding-block);
   padding-inline: var(--header-padding-inline);
   border: var(--border-main);
@@ -77,6 +77,7 @@
   padding: var(--card-title-padding);
   border-bottom: var(--border-main);
   font-family: var(--font-main);
+  font-weight: var(--font-weight-title);
   font-variation-settings: "wght" var(--font-weight-title);
   font-size: var(--font-size-main);
   line-height: var(--line-height-card-title);
@@ -256,7 +257,7 @@
   align-items: center;
   gap: 8px;
   padding: 15px 20px;
-  margin-block-start: 52px;
+  margin-block-start: 50px;
   margin-block-end: 0;
 }
 
@@ -279,7 +280,7 @@
   font-family: var(--font-accent);
   font-size: 14px;
   text-transform: uppercase;
-  max-width: 357px;
+  inline-size: 353px;
 }
 
 .dialog:not([open]) {
@@ -292,9 +293,9 @@
   background-color: rgb(0 0 0 / 0.75);
 }
 
-.dialog__form {
+.dialog[open] .dialog__form {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 39px 1fr;
   align-items: center;
   gap: 20px;
 }
@@ -309,10 +310,13 @@
 }
 
 .dialog__button {
+  justify-self: center;
   grid-column: 1 / -1;
   padding: 9px 17px;
   text-transform: uppercase;
-  width: 100%;
+  width: 293px;
+  height: 38px;
+  margin-block-start: 10px;
 }
 
 /*HEART*/
@@ -374,6 +378,7 @@
 
 .like-icon .sparks {
   opacity: 0;
+  fill: var(--color-heart);
 }
 
 .like-icon.is-liked .sparks {
@@ -383,8 +388,8 @@
 /*АДАПТИВ*/
 
 @media (width <= 375px) {
-  .header {
-    margin: 0 auto 95px;
+  .card:first-child .card__title {
+    padding: 7px 10px;
   }
 
   .save-button {
@@ -397,6 +402,10 @@
   }
 
   .dialog {
-    padding: 32px 38px;
+    padding: 30px 40px;
+  }
+
+  .dialog__button {
+    width: 261px;
   }
 }
